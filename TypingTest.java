@@ -50,10 +50,10 @@ public class TypingTest extends JFrame implements KeyListener {
 
     public void keyPressed(KeyEvent e) {
         if (countdownTimer == null) {
-            startCountdown(120); // Start countdown for 2 minutes (120 seconds)
+            startCountdown(120); 
         }
         if (e.getKeyCode() == KeyEvent.VK_0) {
-            System.exit(0); // Exit the application
+            System.exit(0); 
         }
     }
 
@@ -64,7 +64,7 @@ public class TypingTest extends JFrame implements KeyListener {
                 highlightText(typedText);
                 updateTypingStatistics(typedText);
                 if (typedText.equals(referenceText)) {
-                    endTypingTest(); // End the typing test if the text matches
+                    endTypingTest(); 
                 }
             }
         }
@@ -107,7 +107,7 @@ public class TypingTest extends JFrame implements KeyListener {
             if (timeLeft > 0) {
                 timeLeft--;
                 int minutes = timeLeft / 60;
-                int remainingSeconds = timeLeft % 60; // Change variable name to 'remainingSeconds'
+                int remainingSeconds = timeLeft % 60; 
                 timerLabel.setText(String.format("Time Left: %d:%02d", minutes, remainingSeconds));
             } else {
                 countdownTimer.stop();
@@ -145,6 +145,6 @@ public class TypingTest extends JFrame implements KeyListener {
             countdownTimer.stop();
         }
         showTypingStatistics();
-        dispose(); // Close the typing test window
+        dispose(); 
     }
 }
